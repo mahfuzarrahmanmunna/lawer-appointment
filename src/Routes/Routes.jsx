@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
                 path: '/',
                 Component: Home,
                 hydrateFallbackElement: <LoadingSpinner />,
-                loader: () => fetch('/lower.jsx')
+                loader: () => fetch('/lower.json')
             },
             {
                 path: 'blogs',

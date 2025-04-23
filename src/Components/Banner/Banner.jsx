@@ -1,7 +1,7 @@
 import React from "react";
 
 const Banner = () => (
-    <section className="relative h-[550px] overflow-hidden lg:rounded-3xl">
+    <section className="relative h-[550px] overflow-hidden lg:rounded-3xl mb-12">
         {/* Background image (fixed URL) */}
         <div className='absolute inset-0 bg-[url("https://i.ibb.co/Wj6dCr3/banner-img-1.png")] bg-cover bg-center' />
 
