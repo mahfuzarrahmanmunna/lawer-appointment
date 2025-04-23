@@ -7,6 +7,7 @@ const Home = () => {
     return (
         <div className='mim-w-xl mx-auto md:px-12 lg:px-16 xl:px-24'>
             <Banner />
+            
         </div>
     );
 };
