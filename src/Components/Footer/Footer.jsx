@@ -5,8 +5,8 @@ import { Facebook, Github, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-slate-600 text-base-content rounded p-10">
-            <ul className="flex gap-5 px-1">
+        <footer className="footer footer-horizontal footer-center bg-slate-600 text-base-content  p-10">
+            <ul className="lg:flex grid grid-cols-2 gap-5 px-1">
                 <li>
                     <NavLink to='/' className={({ isActive }) => (`font-medium ${isActive ? 'text-indigo-600 py-2 font-bold px-3 rounded hover:bg-white hover:text-stone-800 bg-white' : 'font-medium bg-gray-500 text-white py-2 px-3 rounded hover:bg-white hover:text-stone-800 '}`)}>
                         Home
