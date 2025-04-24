@@ -5,6 +5,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import MyBookings from "../Pages/MyBookings/MyBookings";
 import Contact from "../Pages/ContactUs/Contact";
 import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
+import LowerDetails from "../Components/LowerDetails/LowerDetails";
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
         Component: Root,
         children: [
             {
+                index: true,
                 path: '/',
                 Component: Home,
                 hydrateFallbackElement: <LoadingSpinner />,
@@ -28,6 +30,12 @@ export const router = createBrowserRouter([
             {
                 path: 'contact-us',
                 Component: Contact
+            },
+            {
+                path: 'lower-details/:id',
+                Component: LowerDetails,
+                hydrateFallbackElement: <LoadingSpinner />,
+                loader: () => fetch('/lower.json')
             }
         ]
     }
