@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import InvalidLower from './InvalidLower';
+import { getBooking } from '../../Utils/LocalStorage';
 
 const LowerControlled = () => {
     const lowerData = useLoaderData()
@@ -21,6 +22,10 @@ const LowerControlled = () => {
         availability,
         fee
     } = singleLower || {}
+
+    const handleBooked = () => {
+        getBooking()
+    }
     return (
         <div className='lg:w-[1160px] mx-auto px-6'>
             <div className='bg-[#f3f3f3] lg:px-16 px-2 text-center py-16 my-8 border border-transparent rounded-2xl'>
@@ -98,7 +103,9 @@ const LowerControlled = () => {
                     Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.
                 </div>
                 <div className='p-6'>
-                    <button className="btn btn-block bg-[#0EA106] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-[#0bc000] hover:scale-105 active:scale-95">
+                    <button
+                        onClick={handleBooked}
+                        className="btn btn-block bg-[#0EA106] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-[#0bc000] hover:scale-105 active:scale-95">
                         Book Appointment Now
                     </button>
                 </div>

@@ -1,11 +1,6 @@
-import React from 'react';
+const getBooking = (book) => {
+    console.log('book');
+}
 
-const LocalStorage = () => {
-    return (
-        <div>
 
-        </div>
-    );
-};
-
-export default LocalStorage;
+export { getBooking }
