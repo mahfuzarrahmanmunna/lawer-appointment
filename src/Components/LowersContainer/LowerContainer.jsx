@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LowerCard from '../LowerDetails/LowerCard';
 
 const LowerContainer = ({ data }) => {
+    const [displayLowers, setDisplayLowers] = useState([]);
+    const [showAll, setShowAll] = useState(false);
+
+    useEffect(() => {
+        if (showAll) {
+            setDisplayLowers(data)
+        }
+        else {
+            setDisplayLowers(data.slice(0, 6))
+        }
+    }, [data, showAll])
     return (
         <div className='mb-12 px-8'>
             <div className='mb-8'>
@@ -14,8 +25,18 @@ const LowerContainer = ({ data }) => {
             </div>
             <div className='grid lg:grid-cols-2 gap-12 '>
                 {
-                    data.map((lower, idx) => <LowerCard lower={lower} key={idx} />)
+                    displayLowers.map((lower, idx) => <LowerCard lower={lower} key={idx} />)
                 }
+            </div>
+            <div className='flex justify-center mt-12'
+                onClick={() => {
+                    setShowAll(prv => !prv)
+                    if (showAll) window.scrollTo(0, 500)
+                }}
+            >
+                <button className='btn'>
+                    {showAll ? 'Show Less' : 'Show All'}
+                </button>
             </div>
         </div>
     );

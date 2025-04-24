@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
                 Component: Contact
             },
             {
-                path: 'lower-details/:id',
+                path: 'lower-details/:reg',
                 Component: LowerDetails,
                 hydrateFallbackElement: <LoadingSpinner />,
                 loader: () => fetch('/lower.json')
