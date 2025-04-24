@@ -15,7 +15,7 @@ const LowerContainer = ({ data }) => {
     }, [data, showAll])
     console.log(displayLowers);
     return (
-        <div className='mb-12 px-8'>
+        <div className='mb-12 px-6'>
             <div className='mb-8'>
                 <h1 className='lg:text-3xl text-xl font-extrabold text-center'>
                     Our Best Lawyers

@@ -8,7 +8,7 @@ const Home = () => {
     usePageTitle()
     const data = useLoaderData()
     return (
-        <div className='mim-w-xl mx-auto md:px-12 lg:px-16 xl:px-24'>
+        <div className='min-w-xl mx-auto md:px-12 lg:px-16 xl:px-24'>
             <Banner />
             <LowerContainer data={data} />
         </div>
