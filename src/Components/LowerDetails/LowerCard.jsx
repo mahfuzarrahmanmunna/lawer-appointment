@@ -10,7 +10,7 @@ const LowerCard = ({ lower }) => {
         license_number
     } = lower || {}
     return (
-        <div className='flex lg:gap-8 gap-4 items-center'>
+        <div className='flex lg:gap-8 gap-4 items-center border border-gray-400 rounded-2xl p-8'>
             <div className="group relative w-36 h-40 overflow-hidden rounded-2xl shadow-lg transition-all duration-300">
                 <div
                     className="pointer-events-none absolute inset-0 rounded-2xl

@@ -35,7 +35,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <img src="https://i.ibb.co.com/73vbhLn/logo.png" alt="" />
+                    <img src="https://i.ibb.co.com/Nd40Hq08/logo.png" alt="" />
                     <h1 className='font-extrabold text-3xl'>Law.BD</h1>
                 </div>
             </div>

@@ -13,6 +13,7 @@ const LowerContainer = ({ data }) => {
             setDisplayLowers(data.slice(0, 6))
         }
     }, [data, showAll])
+    console.log(displayLowers);
     return (
         <div className='mb-12 px-8'>
             <div className='mb-8'>
@@ -31,7 +32,7 @@ const LowerContainer = ({ data }) => {
             <div className='flex justify-center mt-12'
                 onClick={() => {
                     setShowAll(prv => !prv)
-                    if (showAll) window.scrollTo(0, 500)
+                    if (showAll) window.scrollTo(0, 600)
                 }}
             >
                 <button className='btn'>

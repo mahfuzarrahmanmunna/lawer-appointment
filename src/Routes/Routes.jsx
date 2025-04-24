@@ -5,7 +5,8 @@ import Blogs from "../Pages/Blogs/Blogs";
 import MyBookings from "../Pages/MyBookings/MyBookings";
 import Contact from "../Pages/ContactUs/Contact";
 import LoadingSpinner from "../Components/LoadingSpinner/LoadingSpinner";
-import LowerDetails from "../Components/LowerDetails/LowerDetails";
+// import LowersDetails from "../Components/LowerDetails/LowersDetails";
+import LowerControled from "../Components/LowerControled/LowerControled";
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'lower-details/:reg',
-                Component: LowerDetails,
+                Component: LowerControled,
                 hydrateFallbackElement: <LoadingSpinner />,
                 loader: () => fetch('/lower.json')
             }
