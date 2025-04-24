@@ -1,17 +1,17 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { useLoaderData, useNavigate, useParams } from 'react-router';
 import InvalidLower from './InvalidLower';
-import { getBooking } from '../../Utils/LocalStorage';
+import { getBooking, setBooking } from '../../Utils/LocalStorage';
+import toast, { Toaster } from 'react-hot-toast';
 
 const LowerControlled = () => {
     const lowerData = useLoaderData()
+    const [isAlreadyBooked, setIsAlreadyBooked] = useState(false)
     const id = useParams()
+    const navigate = useNavigate()
     const { reg } = id
     console.log(reg);
     const singleLower = lowerData.find(lower => lower.license_number === reg)
-    if (!singleLower) {
-        return <InvalidLower />
-    }
 
     const {
         image,
@@ -23,11 +23,29 @@ const LowerControlled = () => {
         fee
     } = singleLower || {}
 
+    useEffect(() => {
+        const existingBookings = getBooking();
+        const found = existingBookings.find(low => low.license_number === reg)
+        setIsAlreadyBooked(!!found)
+    }, [reg])
+    if (!singleLower) {
+        return <InvalidLower />
+    }
+
     const handleBooked = () => {
-        getBooking()
+        if (isAlreadyBooked) {
+            {
+                toast.error(`You have already booked ${name}`);
+                return;
+            }
+        }
+        navigate('/my-bookings')
+        setBooking(singleLower)
+        toast.success(`Added ${name}`)
     }
     return (
         <div className='lg:w-[1160px] mx-auto px-6'>
+            <Toaster />
             <div className='bg-[#f3f3f3] lg:px-16 px-2 text-center py-16 my-8 border border-transparent rounded-2xl'>
                 <h1 className='font-extrabold text-3xl'>
                     Lawyer’s Profile Details
