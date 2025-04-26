@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router';
+import { useLoaderData, useNavigate,  useParams } from 'react-router';
 import InvalidLower from './InvalidLower';
 import { getBooking, setBooking } from '../../Utils/LocalStorage';
 import toast, { Toaster } from 'react-hot-toast';
@@ -124,7 +124,7 @@ const LowerControlled = () => {
                     <button
                         onClick={handleBooked}
                         className="btn btn-block bg-[#0EA106] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:bg-[#0bc000] hover:scale-105 active:scale-95">
-                        Book Appointment Now
+                        {isAlreadyBooked ? 'Already Booked' : ' Book Appointment Now'}
                     </button>
                 </div>
             </div>
